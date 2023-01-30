@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
+const os = require("os");
 
-app.get("/", (req, res) => {res.send("<h1> Hello World from AWS Code Pipeline </h1>");});
+
+app.get("/", (req, res) => {res.send(os.hostname() + " - Version 3")});
 
 app.get("/health", (req, res) => {
     res.status(200);
